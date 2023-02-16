@@ -2,9 +2,14 @@ from django.urls import path
 
 from .views import (HomePageView, GenreListView, AuthorListView, PublicationListView, CopiesListView, AuthorCreateView, GenreCreateView,
                     PublicationCreateView, CopyCreateView, PublicationDetailView, AuthorDetailView, GenreDetailView, CopiesDetailView,
-                    PublicationUpdateView, AuthorUpdateView, GenreUpdateView, CopyUpdateView)
+                    PublicationUpdateView, AuthorUpdateView, GenreUpdateView, CopyUpdateView,
+                    PublicationDeleteView, AuthorDeleteView, GenreDeleteView, CopyDeleteView)
 
 urlpatterns = [
+    path("detailcopy/<int:pk>/delete", CopyDeleteView.as_view(), name="delete_copy"),
+    path("detailgenre/<int:pk>/delete", GenreDeleteView.as_view(), name="delete_genre"),
+    path("detailauthor/<int:pk>/delete", AuthorDeleteView.as_view(), name="delete_author"),
+    path("detailpublication/<int:pk>/delete", PublicationDeleteView.as_view(), name="delete_publication"),
     path("detailcopy/<int:pk>/update", CopyUpdateView.as_view(), name="update_copy"),
     path("detailgenre/<int:pk>/update", GenreUpdateView.as_view(), name="update_genre"),
     path("detailauthor/<int:pk>/update", AuthorUpdateView.as_view(), name="update_author"),

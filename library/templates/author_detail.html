@@ -6,6 +6,6 @@
     <h3>{{ author.date_of_birth }} to {{ author.date_of_death }}</h3>
 </div>
 
-<a href="{% url 'update_author' author.pk %}">Update</a>
+<a href="{% url 'update_author' author.pk %}">Update</a> | <a href="{% url 'delete_author' author.pk %}">Delete</a>
 
 {% endblock content %}

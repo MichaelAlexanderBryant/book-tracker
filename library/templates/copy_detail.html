@@ -8,6 +8,6 @@
     <p>{{ book.status }}</p>
 </div>
 
-<a href="{% url 'update_copy' book.pk %}">Update</a>
+<a href="{% url 'update_copy' book.pk %}">Update</a> | <a href="{% url 'delete_copy' book.pk %}">Delete</a>
 
 {% endblock content %}

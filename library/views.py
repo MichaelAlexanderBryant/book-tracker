@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
 from .models import Author, Book, Genre, Publication
 
@@ -96,3 +97,24 @@ class CopyUpdateView(UpdateView):
     model = Book
     template_name = "copy_update.html"
     fields = ["book", "imprint", "status"]
+
+# Delete views
+class PublicationDeleteView(DeleteView):
+    model = Publication
+    template_name = "publication_delete.html"
+    success_url = reverse_lazy("home")
+
+class AuthorDeleteView(DeleteView):
+    model = Author
+    template_name = "author_delete.html"
+    success_url = reverse_lazy("home")
+
+class GenreDeleteView(DeleteView):
+    model = Genre
+    template_name = "genre_delete.html"
+    success_url = reverse_lazy("home")
+
+class CopyDeleteView(DeleteView):
+    model = Book
+    template_name = "copy_delete.html"
+    success_url = reverse_lazy("home")
