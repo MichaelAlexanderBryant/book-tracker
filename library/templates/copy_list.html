@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for copy in book_list %}
+<ul>
+    <li>{{ copy.book }} ({{ copy.imprint }}) / Date added: {{ copy.date_added }} / Status: {{ copy.status }}</li>
+</ul>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for publication in publication_list %}
+<ul>
+    <li>{{ publication.title }} by {{ publication.author }} (ISBN: {{publication.isbn}} / Genre: {{publication.genre}}) / Summary: {{ publication.summary }}</li>
+</ul>
+{% endfor %}
+{% endblock content %}

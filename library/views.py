@@ -19,14 +19,17 @@ def HomePageView(request):
     template_name = "home.html"
     return render(request, template_name, context)
 
-class AuthorListView(ListView):
-    model = Author
-    template_name = "author_list.html"
+class PublicationListView(ListView):
+    model = Publication
+    template_name = "publication_list.html"
 
 class GenreListView(ListView):
     model = Genre
     template_name = "genre_list.html"
 
-class PublicationListView(ListView):
-    model = Publication
-    template_name = "publication_list.html"
+class CopiesListView(ListView):
+    model = Book
+    template_name = "copy_list.html"
+
+
+
