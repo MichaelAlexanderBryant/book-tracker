@@ -1,9 +1,10 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.shortcuts import render
 
 from .models import Author, Book, Genre, Publication
 
+# Homepage
 def HomePageView(request):
     publication_count = Publication.objects.count()
     copies_count = Book.objects.count()
@@ -20,9 +21,14 @@ def HomePageView(request):
     template_name = "home.html"
     return render(request, template_name, context)
 
+# List views
 class PublicationListView(ListView):
     model = Publication
     template_name = "publication_list.html"
+
+class AuthorListView(ListView):
+    model = Author
+    template_name = "author_list.html"
 
 class GenreListView(ListView):
     model = Genre
@@ -32,6 +38,7 @@ class CopiesListView(ListView):
     model = Book
     template_name = "copy_list.html"
 
+# Create views
 class AuthorCreateView(CreateView):
     model = Author
     template_name = "author_new.html"
@@ -51,3 +58,20 @@ class CopyCreateView(CreateView):
     model = Book
     template_name = "copy_new.html"
     fields = ["book", "imprint", "status"]
+
+# Detail views
+class PublicationDetailView(DetailView):
+    model = Publication
+    template_name = "publication_detail.html"
+
+class AuthorDetailView(DetailView):
+    model = Author
+    template_name = "author_detail.html"
+
+class GenreDetailView(DetailView):
+    model = Genre
+    template_name = "genre_detail.html"
+
+class CopiesDetailView(DetailView):
+    model = Book
+    template_name = "copy_detail.html"

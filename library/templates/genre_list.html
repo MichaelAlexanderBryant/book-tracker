@@ -3,7 +3,11 @@
 {% block content %}
 {% for genre in genre_list %}
 <ul>
-    <li>{{ genre.genre }}</li>
+    <li>
+        <a href="{% url 'detail_genre' genre.pk %}">
+            {{ genre.genre }}
+        </a>
+    </li>
 </ul>
 {% endfor %}
 {% endblock content %}

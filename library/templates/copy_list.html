@@ -3,7 +3,11 @@
 {% block content %}
 {% for copy in book_list %}
 <ul>
-    <li>{{ copy.book }} ({{ copy.imprint }}) / Date added: {{ copy.date_added }} / Status: {{ copy.status }}</li>
+    <li>
+        <a href="{% url 'detail_copy' copy.pk %}">
+            {{ copy.book }} ({{ copy.imprint }}) / Date added: {{ copy.date_added }} / Status: {{ copy.status }}
+        </a>
+    </li>
 </ul>
 {% endfor %}
 {% endblock content %}

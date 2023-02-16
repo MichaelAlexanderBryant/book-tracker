@@ -11,7 +11,7 @@ class Author(models.Model):
         return self.first_name + " " + self.last_name
     
     def get_absolute_url(self):
-        return reverse("home")
+        return reverse("detail_author", kwargs={"pk": self.pk})
 
 class Genre(models.Model):
     genre = models.CharField(max_length=50)
@@ -20,7 +20,7 @@ class Genre(models.Model):
         return self.genre
     
     def get_absolute_url(self):
-        return reverse("home")
+        return reverse("detail_genre", kwargs={"pk": self.pk})
 
 class Publication(models.Model):
     title = models.CharField(max_length=100)
@@ -33,7 +33,7 @@ class Publication(models.Model):
         return self.title + " by " + str(self.author) + " (ISBN: " + self.isbn + ")"
     
     def get_absolute_url(self):
-        return reverse("home")
+        return reverse("detail_publication", kwargs={"pk": self.pk})
 
 class Book(models.Model):
     book = models.ForeignKey(Publication, on_delete=models.CASCADE)
@@ -50,4 +50,4 @@ class Book(models.Model):
         return str(self.book) + " / Added: " + str(self.date_added) + " / Status: " + self.status
     
     def get_absolute_url(self):
-        return reverse("home")
+        return reverse("detail_copy", kwargs={"pk": self.pk})

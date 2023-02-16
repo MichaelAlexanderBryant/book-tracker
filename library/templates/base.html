@@ -14,15 +14,16 @@
             <ul class="nav-list">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'publications' %}">All publications</a></li>
+                <li><a href="{% url 'authors' %}">All authors</a></li>
                 <li><a href="{% url 'genres' %}">All genres</a></li>
                 <li><a href="{% url 'copies' %}">All copies</a></li>
             </ul>
         </div>
         <div id="bottom-nav">
             <ul class="nav-list">
+                <li><a href="{% url 'new_publication' %}">Add new publication</a></li>
                 <li><a href="{% url 'new_author' %}">Add new author</a></li>
                 <li><a href="{% url 'new_genre' %}">Add new genre</a></li>
-                <li><a href="{% url 'new_publication' %}">Add new publication</a></li>
                 <li><a href="{% url 'new_copy' %}">Add new copy</a></li>
             </ul>
         </div>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h2>{{ publication.title }}</h2>
+    <h3>by {{ publication.author }}</h3>
+    <p>Summary: {{ publication.summary }}</p>
+    <p>ISBN: {{ publication.isbn }}</p>
+</div>
+
+{% endblock content %}
