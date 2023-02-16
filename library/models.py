@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Author(models.Model):
     first_name = models.CharField(max_length=50)
@@ -8,12 +9,18 @@ class Author(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+    
+    def get_absolute_url(self):
+        return reverse("home")
 
 class Genre(models.Model):
     genre = models.CharField(max_length=50)
     
     def __str__(self):
         return self.genre
+    
+    def get_absolute_url(self):
+        return reverse("home")
 
 class Publication(models.Model):
     title = models.CharField(max_length=100)
@@ -24,6 +31,9 @@ class Publication(models.Model):
 
     def __str__(self):
         return self.title + " by " + str(self.author) + " (ISBN: " + self.isbn + ")"
+    
+    def get_absolute_url(self):
+        return reverse("home")
 
 class Book(models.Model):
     book = models.ForeignKey(Publication, on_delete=models.CASCADE)
@@ -38,3 +48,6 @@ class Book(models.Model):
 
     def __str__(self):
         return str(self.book) + " / Added: " + str(self.date_added) + " / Status: " + self.status
+    
+    def get_absolute_url(self):
+        return reverse("home")
