@@ -1,16 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Tracker</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <header>
+    <div id="left-panel">
+        <div id="top-nav">
+            <ul>
+                <li>Home</li>
+                <li>All publications</li>
+                <li>All genres</li>
+                <li>All books</li>
+            </ul>
+        </div>
+        <div id="bottom-nav">
+            <ul>
+                <li>Create new author</li>
+                <li>Create new genre</li>
+                <li>Create new publication</li>
+                <li>Create new book</li>
+            </ul>
+        </div>
+    </div>
+    <div id="right-panel">
         <h1>Book Tracker</h1>
-    </header>
-    {% block content %}
-    {% endblock content %}
+        {% block content %}
+        {% endblock content %}
+    </div>
 </body>
 </html>
