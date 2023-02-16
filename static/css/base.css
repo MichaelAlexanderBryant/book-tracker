@@ -7,6 +7,6 @@ body {
     grid-template-columns: 1fr 4fr
 }
 
-ul {
+.nav-list {
     list-style: none;
 }

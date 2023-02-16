@@ -30,9 +30,9 @@ class Book(models.Model):
     imprint = models.CharField(max_length=250)
     date_added = models.DateTimeField(auto_now_add=True)
     STATUS_CHOICES = [
-        ('Available', ('Available to borrow')),
-        ('Borrowed', ('Borrowed by someone')),
-        ('Archived', ('Archived - no longer available'))
+        ('available', ('Available to borrow')),
+        ('borrowed', ('Borrowed by someone')),
+        ('archived', ('Archived - no longer available'))
     ]
     status = models.CharField(max_length=32, choices=STATUS_CHOICES)
 
