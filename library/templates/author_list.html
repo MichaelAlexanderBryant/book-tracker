@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for author in author_list %}
+<ul>
+    <li>{{ author.first_name }} {{ author.last_name }}: {{ author.date_of_birth }} to {{ author.date_of_death }}</li>
+</ul>
+{% endfor %}
+{% endblock content %}
