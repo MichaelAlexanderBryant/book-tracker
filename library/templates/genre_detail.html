@@ -5,4 +5,6 @@
     <h2>{{ genre.genre }}</h2>
 </div>
 
+<a href="{% url 'update_genre' genre.pk %}">Update</a>
+
 {% endblock content %}

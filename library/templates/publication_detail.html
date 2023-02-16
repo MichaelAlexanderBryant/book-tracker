@@ -8,4 +8,6 @@
     <p>ISBN: {{ publication.isbn }}</p>
 </div>
 
+<a href="{% url 'update_publication' publication.pk %}">Update</a>
+
 {% endblock content %}

@@ -8,4 +8,6 @@
     <p>{{ book.status }}</p>
 </div>
 
+<a href="{% url 'update_copy' book.pk %}">Update</a>
+
 {% endblock content %}

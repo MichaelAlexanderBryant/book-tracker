@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.shortcuts import render
 
 from .models import Author, Book, Genre, Publication
@@ -75,3 +75,24 @@ class GenreDetailView(DetailView):
 class CopiesDetailView(DetailView):
     model = Book
     template_name = "copy_detail.html"
+
+# Update views
+class AuthorUpdateView(UpdateView):
+    model = Author
+    template_name = "author_update.html"
+    fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
+
+class GenreUpdateView(UpdateView):
+    model = Genre
+    template_name = "genre_update.html"
+    fields = ["genre"]
+
+class PublicationUpdateView(UpdateView):
+    model = Publication
+    template_name = "publication_update.html"
+    fields = ["title", "author", "summary", "isbn", "genre"]
+
+class CopyUpdateView(UpdateView):
+    model = Book
+    template_name = "copy_update.html"
+    fields = ["book", "imprint", "status"]
